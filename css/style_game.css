@@ -1,0 +1,148 @@
+*{
+   box-sizing: border-box;
+}
+body{
+    background-image: url('../image/04.png');
+    background-size: cover;
+    background-color: rgb(170, 159, 140);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.start{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(60 164 239 / 93%);
+    z-index: 2;
+}
+
+.start span{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    cursor: pointer;
+    background-color: tomato;
+    padding: 15px 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+
+}
+.info-container{
+    width: 1080px;
+    margin: 10px auto 0;
+    background-color: #FFF;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    overflow:hidden;
+    border: 1px solid #2196f3;
+    display: flex;
+}
+.info-container .name{
+    flex: 1;
+}
+.info-container .tries{
+    flex: 1;
+}
+.memory-game-blocks{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+    margin: 8px auto;
+}
+.memory-game-blocks.stop_clicking{
+    pointer-events: none;
+}
+.memory-game-blocks .game-block{
+    height: 200px;
+    cursor: pointer;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    position: relative;
+    margin: 0 8px 8px;
+    flex: 1 0 200px;
+    
+}
+
+.memory-game-blocks .game-block .front{
+    background-color: #333;
+    line-height: 200px;
+}
+.memory-game-blocks .game-block .front::before{
+    content: '!';
+    color: #FFF;
+    font-size: 140px;
+    font-weight: bold;
+}
+.memory-game-blocks .game-block .back{
+    background-color: #607D88;
+    transform:rotateY(180deg);
+}
+.memory-game-blocks .game-block .back img{
+    width: 140px;
+    height: 140px;
+    margin-top: 30px;
+}
+.memory-game-blocks .game-block .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match{
+    transform: rotateY(180deg);
+} 
+
+.popup{
+    position: fixed;
+    padding: 100px 20px;
+    width: 80%;
+    background-color: rgba(4, 180, 180, 0.876);
+    color: rgb(255, 253, 253);
+    text-align: center;
+    border: 1px solid #222;
+    font-size: 24px;
+    left: 10%;
+    top: 10%;
+    /* transform: translate(-50%,-50%); */
+}
+
+
+/* Start Footer */
+Footer{
+    display: flex;
+    /* padding: 5px; */
+    background-color: black;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    
+}
+Footer .social{
+    flex: 1;
+    display: block;
+}
+Footer .social i{
+    cursor: pointer;
+    line-height: 40px;
+   width: 40px;
+   height: 40px;
+   background-color: rgb(255, 251, 251);
+   color: #000;
+   margin-right: 10px;
+   font-size: 30px;
+}
+Footer .text-footer{
+    flex: 1;
+    text-align: center;
+}
