@@ -40,7 +40,7 @@ body{
     top: 0;
     background-color: #332d2db4;
     width: 200px;
-    z-index: 2;
+    z-index: 1000;
     min-height: 100vh;
     color: #FFF;
 }
@@ -54,7 +54,7 @@ body{
     width: 30px;
     text-align: center;
     cursor: pointer;
-    color: black;
+    color:var(--main-color);
     background-color: white;
 }
 .setting-box .toggle-gear .fa-gear{
@@ -113,6 +113,7 @@ body{
 }
 .nav-bullets .bullet:hover .tooltip{
     display: block;
+    opacity: 1;
 }
 .nav-bullets .bullet .tooltip{
     display: none;
@@ -140,7 +141,7 @@ body{
 }
 /* End nav-bullets */
 
-/* starrt Landing Page */
+/* start Landing Page */
 .landing-page{
     min-height: 75vh;
     background-size: cover;
@@ -156,26 +157,33 @@ body{
     background-color: #00000073;
 }
 .header-area{
-    position: relative;
+    position: fixed;
     z-index: 2;
     color: #FFF;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.335);
+    width: 100%;
+    height: 50px;
+    
 }
 .header-area .logo{
     width: 300px;
     padding: 15px;
     font-weight: bold;
+    
 }
 .header-area .logo img{
     z-index: 1000;
     position: fixed;
     width: 80px;  
-    top: 0;
+    top: -5px;
+    
 }
 .header-area .conainer-links{
     width: 100%;
     text-align: right;
-    padding: 10px;
+    padding-top: 10px;   
+    
 }
 .header-area .links{
     list-style: none;
@@ -322,7 +330,7 @@ color: var(--main-color);
 }
 .about-us .info-box p{  
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     margin-right: 5px;
 }
@@ -479,7 +487,7 @@ flex: 1;
 .timeline .timeline-content .left{
     float: left;
 }
-.timeline .timeline-content .left:before,
+/* .timeline .timeline-content .left:before,
 .timeline .timeline-content .right:before{
     content: '';
     width: 14px;
@@ -489,7 +497,7 @@ flex: 1;
     border-radius: 50%;
     position: absolute;
     top: 45px;
-}
+} */
 @media(max-width:767px){
     .timeline .timeline-content .left,
 .timeline .timeline-content .right{
@@ -542,8 +550,17 @@ flex: 1;
 }
 
 .timeline .timeline-content .content p{
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
 }
+.timeline .timeline-content a{
+font-size: 100px;
+margin-left: 50%;
+color: var(--main-color);
+}
+
 
 
 
@@ -649,25 +666,36 @@ flex: 1;
     color: #FFF;
     z-index: 2;
     position: relative;
-    text-align: left;
-    font-size: 30px;
+    text-align: center;
+    font-size: 50px;
 }
 .testimonial .ts-box{
     position: relative;
-    z-index: 2;
-    width: calc(98% / 3);
-    float: left;
+    z-index: 1;
     background-color: #FFF;
     padding: 10px;
     font-size: 22px;
 }
-.testimonial .ts-box>p{
-    font-size: 14px;
+.testimonial .ts-box button{
+    color: var(--main-color);
+    font-weight: bold;
+    text-decoration-line: none;
+    font-size: 40px;
+}
+.testimonial .ts-box .card-body{
+    font-size: 18px;
     line-height: 1.5;
 }
 
 .testimonial .ts-box:not(:last-of-type){
     margin-right: 1%;
+}
+.testimonial .card-body img{
+    margin-top: 10px;
+    margin-left:40%;
+    height: 130px;
+    display: inherit;
+    background-color: #000;
 }
 
 /* End testimonial */
@@ -741,7 +769,7 @@ Footer{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    height: 50px;
+    height: 10vh;
     
 }
 Footer .social{
@@ -750,9 +778,9 @@ Footer .social{
 }
 Footer .social i{
     cursor: pointer;
-    line-height: 40px;
-   width: 40px;
-   height: 40px;
+    line-height: 30px;
+   width: 30px;
+   height: 30px;
    background-color: rgb(255, 251, 251);
    color: #000;
    margin-right: 10px;
@@ -761,4 +789,5 @@ Footer .social i{
 Footer .text-footer{
     flex: 1;
     text-align: center;
+    padding-top: 15px;
 }
