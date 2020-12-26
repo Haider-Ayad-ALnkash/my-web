@@ -2,6 +2,7 @@
    box-sizing: border-box;
 }
 body{
+    zoom: 75%;
     background-image: url('../image/04.png');
     background-size: cover;
     background-color: rgb(170, 159, 140);
